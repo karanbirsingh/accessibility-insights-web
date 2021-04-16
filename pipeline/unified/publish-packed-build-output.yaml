@@ -9,8 +9,7 @@ steps:
       displayName: 'copy package files to upload'
       inputs:
           SourceFolder: ${{ parameters.packedOutputPath }}
-          Contents: |
-              *unpacked
+          Contents: '**'
           TargetFolder: '$(System.ArtifactStagingDirectory)/${{ parameters.artifactName }}'
           CleanTargetFolder: true
 
