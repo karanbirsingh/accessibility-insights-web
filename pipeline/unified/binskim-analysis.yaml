@@ -30,6 +30,10 @@ steps:
       displayName: binskim-download custom electron symbols (linux)
       condition: and(succeeded(), eq(variables.platform, 'linux'))
 
+    - script: ls -R -l
+      displayName: Dump directory structure
+      condition: and(succeeded(), eq(variables.platform, 'linux'))
+
     - script: yarn copy:prepare-binskim:linux
       displayName: binskim-build folder (linux)
       condition: and(succeeded(), eq(variables.platform, 'linux'))

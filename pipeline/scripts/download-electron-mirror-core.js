@@ -30,27 +30,6 @@ if (
 
 const assetNumber = '6837137';
 
-const displayFolderContents = (level, indent, folderToDisplay) => {
-    if (level == 0) {
-        console.log(`Contents of ${folderToDisplay}`);
-    }
-    const fileIndent = indent + '  ';
-    const files = fs.readdirSync(folderToDisplay);
-    files.forEach(file => {
-        const fullPath = path.resolve(folderToDisplay, file);
-        const stat = fs.statSync(fullPath);
-        if (stat && stat.isDirectory()) {
-            console.log(`${fileIndent}${file}  <==== Folder`);
-            displayFolderContents(level + 1, fileIndent, fullPath);
-        } else {
-            console.log(`${fileIndent}${file}`);
-        }
-    });
-    if (level == 0) {
-        console.log('---------------------');
-    }
-};
-
 const clearAndExtract = async (zipFilePath, destinationPath) => {
     destinationPath = path.resolve(destinationPath);
 
@@ -59,7 +38,6 @@ const clearAndExtract = async (zipFilePath, destinationPath) => {
     fs.rmdirSync(destinationPath, { recursive: true });
 
     await extract(zipFilePath, { dir: destinationPath });
-    displayFolderContents(0, '', destinationPath);
 };
 
 const resolveCustomAssetURL = details => {
