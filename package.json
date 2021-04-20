@@ -32,7 +32,7 @@
         "clean": "grunt clean:*",
         "clean:mock-adb": "grunt clean:mock-adb",
         "copy:prepare-binskim": "node ./pipeline/scripts/prepare-binskim-symbols.js",
-        "copy:prepare-binskim-linux": "node ./pipeline/scripts/prepare-binskim-symbols-linux.js",
+        "copy:prepare-binskim:linux": "node ./pipeline/scripts/prepare-binskim-symbols-linux.js",
         "copyright:check": "license-check-and-add check -f copyright-header.config.json",
         "copyright:fix": "license-check-and-add add -f copyright-header.config.json",
         "download:electron-mirror:binaries": "node ./pipeline/scripts/download-electron-mirror-binaries.js",
