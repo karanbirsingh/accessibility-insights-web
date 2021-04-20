@@ -22,7 +22,7 @@ steps:
       displayName: binskim-build folder
       condition: and(succeeded(), eq(variables.platform, 'windows'))
 
-    - script: yarn run:binskim
+    - script: yarn run:binskim:windows
       displayName: binskim-scan
       condition: and(succeeded(), eq(variables.platform, 'windows'))
 
