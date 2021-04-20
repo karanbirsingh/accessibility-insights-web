@@ -6,7 +6,7 @@ const fs = require('fs-extra');
 
 const runBinSkimLinux = async () => {
     const binSkimDir = path.resolve('analysis/binskim');
-    const fileTarget = path.resolve(binSkimDir, 'files-to-scan/*.*');
+    const fileTarget = path.resolve(binSkimDir, 'files-to-scan/electron');
     const toolsDir = path.resolve(binSkimDir, 'tools');
     const logDir = path.resolve(binSkimDir, 'logs');
     const logFile = path.resolve(logDir, 'binskim-linux.sarif');
@@ -34,7 +34,7 @@ const runBinSkimLinux = async () => {
                         fs.mkdirSync(logDir, { recursive: true });
                         child_process.execFileSync(
                             exe,
-                            ['analyze', fileTarget, '--recurse', '--output', logFile],
+                            ['analyze', fileTarget, '--output', logFile],
                             {
                                 stdio: ['pipe', process.stdout, process.stderr],
                             },

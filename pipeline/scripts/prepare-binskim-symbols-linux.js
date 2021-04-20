@@ -9,14 +9,9 @@ const prepareBinskimDirLinux = async () => {
 
     await fs.copy(productPath, symbolsPath);
     await fs.rename(
-        path.join(symbolsPath, 'Accessibility Insights for Android'),
+        path.join(symbolsPath, 'accessibility insights for android'),
         path.join(symbolsPath, 'electron'),
     );
-
-    // These assemblies don't have symbols and are intentionally ignored
-    const swiftShaderPath = path.join(symbolsPath, 'swiftshader');
-    await fs.unlink(path.join(swiftShaderPath, 'libEGL.so'));
-    await fs.unlink(path.join(swiftShaderPath, 'libGLESv2.so'));
 
     console.log(`Symbols prepared in ${symbolsPath}`);
 };
