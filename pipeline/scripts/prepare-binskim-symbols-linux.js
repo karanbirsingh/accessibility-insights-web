@@ -5,7 +5,7 @@ const fs = require('fs-extra');
 
 const prepareBinskimDirLinux = async () => {
     const symbolsPath = path.resolve('analysis/binskim/files-to-scan');
-    const productPath = path.resolve('drop/electron/unified-production/packed/win-unpacked');
+    const productPath = path.resolve('drop/electron/unified-production/packed/linux-unpacked');
 
     await fs.copy(productPath, symbolsPath);
     await fs.rename(
