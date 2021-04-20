@@ -18,7 +18,7 @@ steps:
       displayName: binskim-download custom electron symbols
       condition: and(succeeded(), eq(variables.platform, 'windows'))
 
-    - script: yarn copy:prepare-binskim
+    - script: yarn copy:prepare-binskim:windows
       displayName: binskim-build folder
       condition: and(succeeded(), eq(variables.platform, 'windows'))
 
