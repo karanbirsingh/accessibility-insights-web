@@ -51,7 +51,7 @@ steps:
 
     - template: ./binskim-analysis.yaml
       parameters:
-          platform: windows
+          platform: $(platform)
 
     - template: publish-packed-build-output.yaml
       parameters:
