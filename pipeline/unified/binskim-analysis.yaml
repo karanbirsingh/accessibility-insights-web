@@ -1,0 +1,8 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+steps:
+    - ${{if eq(variables.platform, 'windows') }}:
+          - template ./binskin-analysis-windows.yaml
+    - ${{if eq(variables.platform, 'linux') }}:
+          - template ./binskin-analysis-linux.yaml

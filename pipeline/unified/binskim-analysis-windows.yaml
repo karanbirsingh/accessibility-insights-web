@@ -14,15 +14,12 @@ steps:
 
     - script: yarn download:electron-mirror:symbols:windows
       displayName: binskim-download custom electron symbols
-      condition: and(succeeded(), eq(variables.platform, 'windows'))
 
     - script: yarn copy:prepare-binskim:windows
       displayName: binskim-build folder
-      condition: and(succeeded(), eq(variables.platform, 'windows'))
 
     - script: yarn run:binskim:windows
       displayName: binskim-scan
-      condition: and(succeeded(), eq(variables.platform, 'windows'))
 
     - task: CopyFiles@2
       displayName: binskim-copy results
