@@ -2,8 +2,7 @@
 # Licensed under the MIT License.
 
 parameters:
-    - name: platform
-      type: string
+    platform: null
 
 steps:
     - ${{if eq(parameters.platform, 'windows') }}:
