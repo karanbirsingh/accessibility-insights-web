@@ -5,8 +5,8 @@ parameters:
     platform: null
 
 steps:
-    - ${{if eq(parameters.platform, 'windows') }}:
+    - ${{if eq(parameters.platform, 'Windows_NT') }}:
           - template: ./binskim-analysis-windows.yaml
 
-    - ${{if eq(parameters.platform, 'linux') }}:
+    - ${{if eq(parameters.platform, 'Linux') }}:
           - template: ./binskim-analysis-linux.yaml
