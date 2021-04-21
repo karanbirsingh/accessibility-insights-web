@@ -6,7 +6,7 @@ parameters:
 
 steps:
     - ${{if eq(parameters.platform, 'windows') }}:
-          - template: ./binskin-analysis-windows.yaml
+          - template: ./binskim-analysis-windows.yaml
 
     - ${{if eq(parameters.platform, 'linux') }}:
-          - template: ./binskin-analysis-linux.yaml
+          - template: ./binskim-analysis-linux.yaml
