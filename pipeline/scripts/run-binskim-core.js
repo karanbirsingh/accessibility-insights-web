@@ -15,7 +15,7 @@ const runBinSkimFromConfig = async config => {
 
     files.forEach(file => {
         if (file.startsWith('Microsoft.CodeAnalysis.BinSkim')) {
-            console.log(`found ${file}`);
+            console.log(`checking ${file}`);
             const pathToToolBinary = path.resolve(
                 toolsDir,
                 file,
@@ -25,7 +25,7 @@ const runBinSkimFromConfig = async config => {
                 config.toolBinaryName,
             );
             if (fs.existsSync(pathToToolBinary)) {
-                foundFile = true;
+                console.log(`Using ${pathToToolBinary}`);
                 if (config.markToolAsExecutable) {
                     fs.chmodSync(pathToToolBinary, '755');
                 }
