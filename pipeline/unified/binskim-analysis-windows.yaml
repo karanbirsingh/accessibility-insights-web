@@ -3,13 +3,11 @@
 steps:
     - task: NuGetToolInstaller@1
       displayName: binskim-install NuGet 5.x
-      condition: and(succeeded(), or(eq(variables.platform, 'windows'), eq(variables.platform, 'linux')))
       inputs:
           versionSpec: '5.x'
 
     - task: NuGetCommand@2
       displayName: binskim-install package from NuGet
-      condition: and(succeeded(), or(eq(variables.platform, 'windows'), eq(variables.platform, 'linux')))
       inputs:
           command: custom
           arguments: 'install Microsoft.CodeAnalysis.BinSkim -NonInteractive -Source https://api.nuget.org/v3/index.json -OutputDirectory ./analysis/binskim/tools -Version 1.7.5'
@@ -26,28 +24,14 @@ steps:
       displayName: binskim-scan
       condition: and(succeeded(), eq(variables.platform, 'windows'))
 
-    - script: yarn download:electron-mirror:symbols:linux
-      displayName: binskim-download custom electron symbols (linux)
-      condition: and(succeeded(), eq(variables.platform, 'linux'))
-
-    - script: yarn copy:prepare-binskim:linux
-      displayName: binskim-build folder (linux)
-      condition: and(succeeded(), eq(variables.platform, 'linux'))
-
-    - script: yarn run:binskim:linux
-      displayName: binskim-scan (linux)
-      condition: and(succeeded(), eq(variables.platform, 'linux'))
-
     - task: CopyFiles@2
       displayName: binskim-copy results
-      condition: and(succeeded(), or(eq(variables.platform, 'windows'), eq(variables.platform, 'linux')))
       inputs:
           SourceFolder: './analysis/binskim/logs'
           TargetFolder: '$(System.ArtifactStagingDirectory)/CodeAnalysisLogs'
 
     - task: PublishBuildArtifacts@1
       displayName: binskim-publish artifact
-      condition: and(succeeded(), or(eq(variables.platform, 'windows'), eq(variables.platform, 'linux')))
       inputs:
           pathtoPublish: '$(System.ArtifactStagingDirectory)/CodeAnalysisLogs'
           artifactName: 'CodeAnalysisLogs'
