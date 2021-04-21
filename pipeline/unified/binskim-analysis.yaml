@@ -30,7 +30,7 @@ steps:
       displayName: binskim-download custom electron symbols (linux)
       condition: and(succeeded(), eq(variables.platform, 'linux'))
 
-    - script: ls -R -l ./analysys/binskim
+    - script: ls -R -l ./analysis/binskim
       displayName: Dump binskim directory structure (1)
       condition: and(succeeded(), eq(variables.platform, 'linux'))
 
@@ -38,7 +38,7 @@ steps:
       displayName: binskim-build folder (linux)
       condition: and(succeeded(), eq(variables.platform, 'linux'))
 
-    - script: ls -R -l ./analysys/binskim
+    - script: ls -R -l ./analysis/binskim
       displayName: Dump binskim directory structure (2)
       condition: and(succeeded(), eq(variables.platform, 'linux'))
 
@@ -46,7 +46,7 @@ steps:
       displayName: binskim-scan (linux)
       condition: and(succeeded(), eq(variables.platform, 'linux'))
 
-    - script: ls -R -l ./analysys/binskim
+    - script: ls -R -l ./analysis/binskim
       displayName: Dump binskim directory structure (3)
       condition: and(succeeded(), eq(variables.platform, 'linux'))
 
