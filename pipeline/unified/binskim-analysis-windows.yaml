@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
 steps:
     - task: NuGetToolInstaller@1
-      displayName: binskim-install NuGet 5.x
+      displayName: (windows) binskim-install NuGet 5.x
       inputs:
           versionSpec: '5.x'
 
