@@ -50,7 +50,7 @@ steps:
       displayName: print out canary file hashes
 
     - template: ./binskim-analysis.yaml
-      parameters: platform:${{Agent.OS}}
+      parameters: platform:${{variables.AGENT_OS}}
 
     - template: publish-packed-build-output.yaml
       parameters:
