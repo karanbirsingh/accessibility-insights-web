@@ -49,8 +49,11 @@ steps:
     - script: node ./pipeline/scripts/print-file-hash-info.js $(System.DefaultWorkingDirectory)/drop/electron/unified-canary/packed
       displayName: print out canary file hashes
 
-    - template: ./binskim-analysis.yaml
-      parameters: platform:${{ platform }}
+    - ${{if eq(platform, 'windows') }}:
+          - template: ./binskim-analysis-windows.yaml
+
+    - ${{if eq(platform, 'linux') }}:
+          - template: ./binskim-analysis-linux.yaml
 
     - template: publish-packed-build-output.yaml
       parameters:
