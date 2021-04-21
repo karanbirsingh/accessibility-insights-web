@@ -1,12 +1,9 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-parameters:
-    platform: null
-
 steps:
-    - ${{if eq(parameters.platform, 'Windows_NT') }}:
+    - ${{if eq(variables.AGENT_OS, 'Windows_NT') }}:
           - template: ./binskim-analysis-windows.yaml
 
-    - ${{if eq(parameters.platform, 'Linux') }}:
+    - ${{if eq(variables.AGENT_OS, 'Linux') }}:
           - template: ./binskim-analysis-linux.yaml
