@@ -27,7 +27,7 @@ const runBinSkimFromConfig = async config => {
             if (fs.existsSync(pathToToolBinary)) {
                 foundFile = true;
                 if (config.markToolAsExecutable) {
-                    fs.chmodSync(file, '755');
+                    fs.chmodSync(pathToToolBinary, '755');
                 }
                 fs.mkdirSync(logDir, { recursive: true });
                 child_process.execFileSync(
