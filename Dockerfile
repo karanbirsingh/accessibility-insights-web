@@ -14,7 +14,7 @@ COPY package.json yarn.lock /app/
 
 RUN yarn install --frozen-lockfile
 
-RUN yarn add segfault-handler -W
+#RUN yarn add segfault-handler -W
 COPY . /app
 
 # RUN yarn build:dev
