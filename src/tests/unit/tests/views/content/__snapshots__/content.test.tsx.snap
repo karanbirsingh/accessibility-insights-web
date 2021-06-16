@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`content renders 1`] = `
-"<Content deps={{...}}>
-  <THE-CONTENT deps={{...}} options={{...}} />
-</Content>"
-`;
