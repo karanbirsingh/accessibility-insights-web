@@ -7,7 +7,7 @@ import { DetailsViewPage } from '../../common/page-controllers/details-view-page
 import { TargetPage } from '../../common/page-controllers/target-page';
 import { scanForAccessibilityIssues } from '../../common/scan-for-accessibility-issues';
 
-describe('Details View -> Overview Page', () => {
+describe.skip('Details View -> Overview Page', () => {
     let browser: Browser;
     let targetPage: TargetPage;
     let overviewPage: DetailsViewPage;

@@ -6,7 +6,7 @@ import { TabStopShadowDomSelectors } from '../../common/element-identifiers/targ
 import { PopupPage } from '../../common/page-controllers/popup-page';
 import { TargetPage } from '../../common/page-controllers/target-page';
 
-describe('Tab stops visualization', () => {
+describe.skip('Tab stops visualization', () => {
     let browser: Browser;
     let targetPage: TargetPage;
     let popupPage: PopupPage;

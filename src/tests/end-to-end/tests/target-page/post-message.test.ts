@@ -15,7 +15,7 @@ import {
 } from 'tests/end-to-end/common/timeouts';
 
 // This file constitutes the success criteria for feat(web-postmessage)
-describe('Target Page window.postMessage behavior', () => {
+describe.skip('Target Page window.postMessage behavior', () => {
     let browser: Browser;
     let targetPage: NestedIframeTargetPage;
     let popupPage: PopupPage;

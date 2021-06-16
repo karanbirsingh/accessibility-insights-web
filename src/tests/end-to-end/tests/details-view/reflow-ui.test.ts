@@ -7,7 +7,7 @@ import { navMenuSelectors } from '../../common/element-identifiers/details-view-
 import { DetailsViewPage } from '../../common/page-controllers/details-view-page';
 import { scanForAccessibilityIssues } from '../../common/scan-for-accessibility-issues';
 
-describe('Details View -> Assessment -> Reflow', () => {
+describe.skip('Details View -> Assessment -> Reflow', () => {
     let browser: Browser;
     let detailsViewPage: DetailsViewPage;
     const height = 400;

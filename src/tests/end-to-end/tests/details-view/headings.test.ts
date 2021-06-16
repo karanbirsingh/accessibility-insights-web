@@ -7,7 +7,7 @@ import { DetailsViewPage } from '../../common/page-controllers/details-view-page
 import { scanForAccessibilityIssues } from '../../common/scan-for-accessibility-issues';
 import { DEFAULT_TARGET_PAGE_SCAN_TIMEOUT_MS } from '../../common/timeouts';
 
-describe('Details View -> Assessment -> Headings', () => {
+describe.skip('Details View -> Assessment -> Headings', () => {
     let browser: Browser;
     let headingsPage: DetailsViewPage;
 

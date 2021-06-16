@@ -12,7 +12,7 @@ import { PopupPage } from '../../common/page-controllers/popup-page';
 import { TargetPage } from '../../common/page-controllers/target-page';
 import { scanForAccessibilityIssues } from '../../common/scan-for-accessibility-issues';
 
-describe('Details View -> Preview Features Panel', () => {
+describe.skip('Details View -> Preview Features Panel', () => {
     let browser: Browser;
     let targetPage: TargetPage;
     let detailsViewPage: DetailsViewPage;

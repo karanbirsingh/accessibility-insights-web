@@ -10,8 +10,8 @@ module.exports = {
     ...baseConfig,
     collectCoverage: false,
     displayName: 'e2e tests',
-    globalSetup: `${currentDir}/setup/global-setup.ts`,
-    globalTeardown: `${currentDir}/setup/global-teardown.ts`,
+    //globalSetup: `${currentDir}/setup/global-setup.ts`,
+    //globalTeardown: `${currentDir}/setup/global-teardown.ts`,
     globals: {
         rootDir: path.resolve(__dirname, rootDir),
         // Playwright requires this, but Jest's jsdom testEnvironment doesn't define it as of Jest 27
@@ -28,6 +28,6 @@ module.exports = {
     ],
     rootDir: rootDir,
     roots: [currentDir],
-    setupFilesAfterEnv: [`${currentDir}/setup/test-setup.ts`],
+    // setupFilesAfterEnv: [`${currentDir}/setup/test-setup.ts`],
     testEnvironment: 'jsdom',
 };

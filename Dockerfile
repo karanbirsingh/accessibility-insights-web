@@ -23,9 +23,10 @@ COPY package.json yarn.lock /app/
 
 RUN yarn install --frozen-lockfile
 
+RUN yarn add segfault-handler -W
 COPY . /app
 
-RUN yarn build:dev --no-cache
+RUN yarn build:dev
 
 # since we need our chromium to run in 'headful' mode (for testing chrome extension)
 # we need a fake display (to run headful chromium), which we create by starting a Virtualized X server environment using xvfb-run

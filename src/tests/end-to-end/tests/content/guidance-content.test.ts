@@ -8,7 +8,7 @@ import { launchBrowser } from '../../common/browser-factory';
 import { GuidanceContentSelectors } from '../../common/element-identifiers/common-selectors';
 import { scanForAccessibilityIssues } from '../../common/scan-for-accessibility-issues';
 
-describe('Guidance Content pages', () => {
+describe.skip('Guidance Content pages', () => {
     const contentPaths = contentPages.allPaths();
 
     let browser: Browser;

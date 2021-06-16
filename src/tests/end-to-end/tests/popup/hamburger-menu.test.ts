@@ -8,7 +8,7 @@ import { PopupPage } from '../../common/page-controllers/popup-page';
 import { TargetPage } from '../../common/page-controllers/target-page';
 import { scanForAccessibilityIssues } from '../../common/scan-for-accessibility-issues';
 
-describe('Popup -> Hamburger menu', () => {
+describe.skip('Popup -> Hamburger menu', () => {
     let browser: Browser;
     let targetPage: TargetPage;
     let popupPage: PopupPage;

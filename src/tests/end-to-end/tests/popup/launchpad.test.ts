@@ -8,7 +8,7 @@ import { PopupPage } from '../../common/page-controllers/popup-page';
 import { TargetPage } from '../../common/page-controllers/target-page';
 import { scanForAccessibilityIssues } from '../../common/scan-for-accessibility-issues';
 
-describe('Popup -> Launch Pad', () => {
+describe.skip('Popup -> Launch Pad', () => {
     let browser: Browser;
     let targetPage: TargetPage;
     let popupPage: PopupPage;

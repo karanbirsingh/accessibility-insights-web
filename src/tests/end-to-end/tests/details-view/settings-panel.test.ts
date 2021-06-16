@@ -9,7 +9,7 @@ import { DetailsViewPage } from 'tests/end-to-end/common/page-controllers/detail
 import { TargetPage } from 'tests/end-to-end/common/page-controllers/target-page';
 import { scanForAccessibilityIssues } from 'tests/end-to-end/common/scan-for-accessibility-issues';
 
-describe('Details View -> Settings Panel', () => {
+describe.skip('Details View -> Settings Panel', () => {
     let browser: Browser;
     let targetPage: TargetPage;
     let detailsViewPage: DetailsViewPage;

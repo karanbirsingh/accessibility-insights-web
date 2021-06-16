@@ -4,7 +4,7 @@ import { Browser } from 'tests/end-to-end/common/browser';
 import { launchBrowser } from 'tests/end-to-end/common/browser-factory';
 import { DEFAULT_TARGET_PAGE_SCAN_TIMEOUT_MS } from 'tests/end-to-end/common/timeouts';
 
-describe('Details View -> Assessment -> Landmarks', () => {
+describe.skip('Details View -> Assessment -> Landmarks', () => {
     let browser: Browser;
 
     beforeEach(async () => {

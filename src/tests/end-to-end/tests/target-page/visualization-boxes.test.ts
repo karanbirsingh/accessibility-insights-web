@@ -7,7 +7,7 @@ import { PopupPage } from '../../common/page-controllers/popup-page';
 import { TargetPage } from '../../common/page-controllers/target-page';
 import { scanForAccessibilityIssues } from '../../common/scan-for-accessibility-issues';
 
-describe('Target Page visualization boxes', () => {
+describe.skip('Target Page visualization boxes', () => {
     let browser: Browser;
     let targetPage: TargetPage;
     let popupPage: PopupPage;

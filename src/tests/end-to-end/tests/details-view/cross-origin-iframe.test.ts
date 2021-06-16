@@ -11,7 +11,7 @@ import { DetailsViewPage } from '../../common/page-controllers/details-view-page
 import { TargetPage } from '../../common/page-controllers/target-page';
 import { DEFAULT_TARGET_PAGE_SCAN_TIMEOUT_MS } from '../../common/timeouts';
 
-describe('scanning', () => {
+describe.skip('scanning', () => {
     let browser: Browser;
     let targetPage: TargetPage;
     let fastPassAutomatedChecks: DetailsViewPage;
