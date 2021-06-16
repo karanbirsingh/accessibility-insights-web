@@ -1,13 +1,10 @@
-# Copyright (c) Microsoft Corporation. All rights reserved.
-# Licensed under the MIT License.
-
-# reference: https://github.com/microsoft/playwright/tree/master/docs/docker
-# reference: https://stackoverflow.com/a/51683309/3711475
-# reference: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-in-docker
-
-FROM mcr.microsoft.com/playwright:bionic
+FROM ubuntu:bionic
 
 USER root
+
+RUN apt-get update && apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
+    apt-get install -y nodejs
 
 RUN npm install -g yarn@1.22.10
 
