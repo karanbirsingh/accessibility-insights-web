@@ -9,19 +9,13 @@ FROM mcr.microsoft.com/playwright:bionic
 
 USER root
 
-# Install node 14 (per https://github.com/microsoft/playwright/pull/4262#issuecomment-719745883)
-RUN apt-get update && apt-get install -y curl && \
-    curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
-    apt-get install -y nodejs && \
-    rm -rf /var/lib/apt/lists/*
-
 RUN npm install -g yarn@1.22.10
 
 WORKDIR /app
 
 COPY package.json yarn.lock /app/
 
-RUN yarn install
+RUN yarn install --frozen-lockfile
 
 RUN yarn add segfault-handler -W
 COPY . /app
