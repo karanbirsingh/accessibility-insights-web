@@ -3,9 +3,6 @@
 //import { Browser } from '../../common/browser';
 //import { launchBrowser } from '../../common/browser-factory';
 
-const SegfaultHandler = require('segfault-handler');
-SegfaultHandler.registerHandler('crash.log');
-
 describe('Settings Dropdown', () => {
     //let browser: Browser;
 

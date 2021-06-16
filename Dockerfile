@@ -21,7 +21,7 @@ WORKDIR /app
 
 COPY package.json yarn.lock /app/
 
-RUN yarn install --frozen-lockfile
+RUN yarn install
 
 RUN yarn add segfault-handler -W
 COPY . /app
