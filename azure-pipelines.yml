@@ -4,14 +4,14 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+    - segfault
 
 pool:
-  vmImage: ubuntu-18.04
+    vmImage: ubuntu-18.04
 
 steps:
-- script: yarn test:e2e:docker:build
-  displayName: 'yarn test:e2e:docker:build'
+    - script: yarn test:e2e:docker:build
+      displayName: 'yarn test:e2e:docker:build'
 
-- script: yarn test:e2e:docker:run
-  displayName: 'yarn test:e2e:docker:run'
+    - script: yarn test:e2e:docker:run
+      displayName: 'yarn test:e2e:docker:run'
