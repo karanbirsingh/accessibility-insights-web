@@ -9,7 +9,7 @@
         "url": "https://github.com/Microsoft/accessibility-insights-web"
     },
     "scripts": {
-        "test:e2e": "jest --detectOpenHandles",
+        "test:e2e": "jest --detectOpenHandles settings-drop-down",
         "test:e2e:docker:build": "docker build -t accessibility-insights-web-e2e .",
         "test:e2e:docker:run": "docker run -t accessibility-insights-web-e2e"
     },
