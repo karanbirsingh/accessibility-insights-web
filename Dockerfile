@@ -16,5 +16,5 @@ RUN yarn install --frozen-lockfile
 
 COPY . /app
 
-ENTRYPOINT ["/bin/sh", "-c", "node node_modules/jest/bin/jest.js --detectOpenHandles sample.test.js"]
+ENTRYPOINT ["/bin/sh", "-c", "node node_modules/jest/bin/jest.js --detectOpenHandles"]
 # ENTRYPOINT ["/bin/sh", "-c", "yarn test:e2e"]
