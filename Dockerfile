@@ -16,4 +16,4 @@ RUN yarn install --frozen-lockfile
 
 COPY . /app
 
-ENTRYPOINT ["/bin/sh", "-c", "node node_modules/jest/bin/jest.js settings-drop-down"]
+ENTRYPOINT ["/bin/sh", "-c", "node node_modules/jest/bin/jest.js --detectOpenHandles settings-drop-down"]
