@@ -5,15 +5,16 @@
 # reference: https://stackoverflow.com/a/51683309/3711475
 # reference: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-in-docker
 
-FROM mcr.microsoft.com/playwright:bionic
+FROM mcr.microsoft.com/playwright:v1.12.2-focal
 
 USER root
 
-# Install node 14 (per https://github.com/microsoft/playwright/pull/4262#issuecomment-719745883)
+# Downgrading from nodejs 16.3.0 to 14.17.1 is both for consistency with our other build
+# environments and a workaround for https://github.com/nodejs/node/issues/39019
 RUN apt-get update && apt-get install -y curl && \
-    curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
-    apt-get install -y nodejs && \
-    rm -rf /var/lib/apt/lists/*
+  curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && \
+  apt-get install -y --allow-downgrades nodejs=14.17.1* && \
+  rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g yarn@1.22.10
 
